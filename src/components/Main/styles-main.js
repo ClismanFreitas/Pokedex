@@ -1,25 +1,26 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom";
 
 export const getBackgroundColor = (type) => {
-    if (type.includes("normal")) return "gray";
-    if (type.includes("fire")) return "red";
-    if (type.includes("water")) return "blue";
-    if (type.includes("electric")) return "yellow";
-    if (type.includes("grass")) return "green";
-    if (type.includes("ice")) return "lightblue";
-    if (type.includes("fighting")) return "brown";
-    if (type.includes("poison")) return "purple";
-    if (type.includes("ground")) return "saddlebrown";
-    if (type.includes("flying")) return "skyblue";
-    if (type.includes("psychic")) return "pink";
-    if (type.includes("bug")) return "lightgreen";
-    if (type.includes("rock")) return "darkgray";
-    if (type.includes("ghost")) return "darkviolet";
-    if (type.includes("dragon")) return "indigo";
-    if (type.includes("dark")) return "black";
-    if (type.includes("steel")) return "silver";
-    if (type.includes("fairy")) return "lightpink";
-    return "gray";
+  if (type.includes("normal")) return "gray";
+  if (type.includes("fire")) return "red";
+  if (type.includes("water")) return "blue";
+  if (type.includes("electric")) return "yellow";
+  if (type.includes("grass")) return "green";
+  if (type.includes("ice")) return "lightblue";
+  if (type.includes("fighting")) return "brown";
+  if (type.includes("poison")) return "purple";
+  if (type.includes("ground")) return "saddlebrown";
+  if (type.includes("flying")) return "skyblue";
+  if (type.includes("psychic")) return "pink";
+  if (type.includes("bug")) return "lightgreen";
+  if (type.includes("rock")) return "darkgray";
+  if (type.includes("ghost")) return "darkviolet";
+  if (type.includes("dragon")) return "indigo";
+  if (type.includes("dark")) return "black";
+  if (type.includes("steel")) return "silver";
+  if (type.includes("fairy")) return "lightpink";
+  return "gray";
 };
 
 export const Main = styled.main`
@@ -29,10 +30,11 @@ export const Main = styled.main`
     padding-top: 30px;
     flex-direction: column;
     font-family: sans-serif;
+    
 `;
 
 export const Ul = styled.ul`
-  width: 1400px;
+ width: 1400px;
   height: 900px;
   display: flex;
   flex-wrap: wrap;
@@ -115,10 +117,21 @@ export const Button = styled.button`
     transition: 0.5s ease-in-out;
     color: white;
     border-radius: 15px;
+    cursor: pointer;
 
      &:hover {
         transition: .1s ease
         box-shadow: 0px 0px 15px ${(props) => props.theme.borda}, 0px 0px 30px ${(props) => props.theme.color};
         transform: scale(1.05);
     }
+`;
+
+export const StyledLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
 `;
