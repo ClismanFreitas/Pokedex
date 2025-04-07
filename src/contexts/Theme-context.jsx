@@ -1,8 +1,8 @@
 import { createContext, useState } from "react"
-import Dark from "../../Assets/Image/wallpaper-dark.jpg"
-import Light from "../../Assets/Image/wallpaper-light.jpg"
-import Lua from "../../Assets/Image/lua.png"
-import Sol from "../../Assets/Image/sol.png"
+import Dark from "../Assets/Image/wallpaper-dark.jpg"
+import Light from "../Assets/Image/wallpaper-light.jpg"
+import Lua from "../Assets/Image/lua.png"
+import Sol from "../Assets/Image/sol.png"
 
 export const themes ={
     light: {

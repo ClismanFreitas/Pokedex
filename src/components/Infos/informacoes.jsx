@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { NomePokemon, Tipo, Main, } from "../Main/styles-main";
-import { ThemeContext } from "../contexts/Theme-context";
+import { ThemeContext } from "../../contexts/Theme-context";
 import React, { useContext } from "react";
-import { Li, Div, Button, DivSkills } from "./styles-info"
+import { Li, Div, Button, DivSkills, Lista, ListaSkills, Move, Moves } from "./styles-info"
 import Home from "../../Assets/Image/casa.png"
 import { Link } from "react-router-dom"
 
@@ -35,18 +35,30 @@ const InfoPokemon = () => {
                             </Tipo>
                         ))}
                     </Div>
-                    <DivSkills>
+                    <div>
+                        <h3>Move</h3>
+                        <ul>
+                            <Move>
+                                {pokemon.movimentos.map((move, _) => (
+                                <strong><Moves theme={theme}>{firstUpper(move)}</Moves></strong>
+                                ))}
+                            </Move>
+                        </ul>
+                    </div>
+                    <DivSkills theme={theme}>
                         <div>
                             <h3>Habilidades</h3>
-                            <ul>
-                                {pokemon.habilidades.map((skill, indx) => (
-                                    <li key={indx}>
-                                        <strong>{firstUpper(skill)}</strong> 
-                                    </li>
+                            <Lista>
+                                {pokemon.habilidades.map((skill, index) => (
+                                    <ListaSkills key={index}>
+                                        <strong>{firstUpper(skill)}</strong>
+                                        <br />
+                                        <br />
+                                        <span>{pokemon.infoHabilidades[index]}</span>
+                                    </ListaSkills>
                                 ))}
-                            </ul>
+                            </Lista>
                         </div>
-
                     </DivSkills>
                 </Li>
             </ul>

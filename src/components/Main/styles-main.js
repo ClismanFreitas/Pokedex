@@ -49,11 +49,6 @@ export const Ul = styled.ul`
     width: 10px;
   }
 
-  &::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 155px;
-  }
-
   &::-webkit-scrollbar-thumb {
     background: rgba(250, 250, 250, 0.7);
     border-radius: 155px;
@@ -96,7 +91,7 @@ export const NomePokemon = styled.p`
 
 export const Tipo = styled.p`
     background-color: ${({ $tipo }) => getBackgroundColor($tipo)};
-    color:rgba(0, 0, 0, 0.51);
+    color:rgb(255, 255, 255);
     padding: 10px;
     border-radius: 10px;
     margin-top: 5px;

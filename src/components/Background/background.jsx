@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { ThemeContext} from '../contexts/Theme-context'
+import { ThemeContext} from '../../contexts/Theme-context'
 import styled from 'styled-components'
 
 export const Background = () => {
