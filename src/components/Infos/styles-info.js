@@ -23,7 +23,6 @@ export const Li = styled.li`
 
 export const Div = styled.div`
     height: 150px;
-
     padding-bottom: 20px;
 `;
 
@@ -39,7 +38,7 @@ export const Button = styled.button`
 
 export const DivSkills = styled.div`
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     background-color: ${(props) => props.theme.fundo};
     border: ${(props) => props.theme.borda};
     width: 400px;
@@ -47,19 +46,40 @@ export const DivSkills = styled.div`
     border-radius: 15px;
     padding-top: 15px;
     margin-top: 15px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 155px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(250, 250, 250, 0.7);
+    border-radius: 155px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(127, 67, 191, 1);
+  }
 `;
 
 export const Lista = styled.ul`
     list-style: none;
     padding-top: 10px;
-`;
-
-export const ListaSkills = styled.li`
     margin-bottom: 10px;
 `;
 
+export const ListaSkills = styled.li`
+    margin: 5px;
 
-export const Move = styled.li`
+`;
+
+
+export const Move = styled.div`
     list-style: none;
     display: flex;
     border-radius: 15px;
@@ -68,7 +88,7 @@ export const Move = styled.li`
     overflow-y: auto;
 
     &::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
     height: 8px;
   }
 

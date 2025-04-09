@@ -37,7 +37,7 @@ const Conteudo = () => {
                         moves.move.name
                     ))
                     const numeroDeMovimentos = movimento.slice(0, 11)
-                    console.log(numeroDeMovimentos);
+              
                     
                     
                     return {

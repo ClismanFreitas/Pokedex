@@ -39,8 +39,8 @@ const InfoPokemon = () => {
                         <h3>Move</h3>
                         <ul>
                             <Move>
-                                {pokemon.movimentos.map((move, _) => (
-                                <strong><Moves theme={theme}>{firstUpper(move)}</Moves></strong>
+                                {pokemon.movimentos.map((move, index) => (
+                                <strong key={move + index}><Moves theme={theme}>{firstUpper(move)}</Moves></strong>
                                 ))}
                             </Move>
                         </ul>

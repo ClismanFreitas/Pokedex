@@ -24,13 +24,12 @@ export const getBackgroundColor = (type) => {
 };
 
 export const Main = styled.main`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 30px;
-    flex-direction: column;
-    font-family: sans-serif;
-    
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 30px;
+flex-direction: column;
+font-family: sans-serif;
 `;
 
 export const Ul = styled.ul`
@@ -129,4 +128,27 @@ export const StyledLink = styled(Link)`
   height: 100%;
   text-decoration: none;
   color: inherit;
+`;
+
+export const Select = styled.select`
+  background-color: ${(props) => props.theme.fundo};
+  border: ${(props) => props.theme.borda};
+  color: white;
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  appearance: none;
+  font-weight: bold;
+`;
+
+export const DivSelect = styled.div`
+  width: 70%;
+  display: flex;
+  flex-direction: row-reverse;
+`;
+
+export const Option = styled.option`
+
 `;
