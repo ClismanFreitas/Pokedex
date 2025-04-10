@@ -1,5 +1,5 @@
 import Cabecalho from "./components/Header/Header"
-import Conteudo from "./components/Main/Conteudo-API"
+import ConteudoDescricao from "./components/services/api/Conteudo-api"
 import { Background } from "./components/Background/background"
 
 import { ThemeProvider } from "./contexts/Theme-context"
@@ -20,7 +20,7 @@ function App() {
         <Background />
 
         <Routes>
-          <Route path="/" element={<Conteudo />} />
+          <Route path="/" element={<ConteudoDescricao />} />
           <Route path="/informacoes" element={<InfoPokemon />} />
         </Routes>
 

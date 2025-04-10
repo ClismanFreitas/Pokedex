@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { ThemeContext } from "../../contexts/Theme-context";
-import ConteudoDescricao from "./Conteudo-descricao";
-import InfoPokemon from "../Infos/informacoes";
+import { ThemeContext } from "../../../contexts/Theme-context";
+import ConteudoDescricao from "../../Main/Conteudo-descricao";
+import InfoPokemon from "../../Infos/informacoes";
 
 
 const Conteudo = () => {
@@ -37,9 +37,7 @@ const Conteudo = () => {
                         moves.move.name
                     ))
                     const numeroDeMovimentos = movimento.slice(0, 11)
-              
-                    
-                    
+
                     return {
                         name: pokemon.name,
                         image: details.data.sprites.front_default,
@@ -57,6 +55,9 @@ const Conteudo = () => {
         fetchData();
     }, [PokemonsList]);
 
+    const FetchType = () => {
+        
+    }
 
     return (
         <>
