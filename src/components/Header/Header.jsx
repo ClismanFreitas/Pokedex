@@ -4,7 +4,7 @@ const Cabecalho = () => {
     return (
         <Header>
             <Div>
-                <Img src="./src/assets/image/Test.png" />
+                <Img src="./src/assets/image/test.png" />
             </Div>
         </Header>
     )
