@@ -1,11 +1,11 @@
 import styled from "styled-components"
-
+import Logo from "../../Assets/Image/logo.png"
 
 const Cabecalho = () => {
     return (
         <Header>
             <Div>
-                <Img src="../../src/Assets/Image/test.png" />
+                <Img src={Logo} />
             </Div>
         </Header>
     )
