@@ -141,14 +141,12 @@ export const Select = styled.select`
   border-radius: 15px;
   appearance: none;
   font-weight: bold;
+  cursor: pointer;
+
 `;
 
 export const DivSelect = styled.div`
-  width: 70%;
+  width: 85%;
   display: flex;
   flex-direction: row-reverse;
-`;
-
-export const Option = styled.option`
-
 `;

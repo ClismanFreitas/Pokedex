@@ -11,7 +11,7 @@ const InfoPokemon = () => {
     const location = useLocation();
     const { pokemon } = location.state || {};
 
-    if (!pokemon) return <p>Nenhum Pokémon selecionado.</p>;
+    if (!pokemon) return ;
 
     const firstUpper = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
