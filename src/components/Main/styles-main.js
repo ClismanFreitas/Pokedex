@@ -30,6 +30,7 @@ align-items: center;
 padding-top: 30px;
 flex-direction: column;
 font-family: sans-serif;
+
 `;
 
 export const Ul = styled.ul`
@@ -56,6 +57,15 @@ export const Ul = styled.ul`
   &::-webkit-scrollbar-thumb:hover {
     background: rgba(127, 67, 191, 1);
   }
+
+  @media (max-width: 500px){
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
 `;
 
 export const Li = styled.li`
@@ -149,4 +159,10 @@ export const DivSelect = styled.div`
   width: 85%;
   display: flex;
   flex-direction: row-reverse;
+
+    @media (max-width: 500px){
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;   
+}
 `;

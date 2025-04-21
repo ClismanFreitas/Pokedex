@@ -24,4 +24,8 @@ const Container = styled.div`
     left: 0;
     z-index: -1;
     transition:  0.5s ease-in-out;
+
+    @media (max-width: 500px){
+        background-position: center;
+    }
 `;

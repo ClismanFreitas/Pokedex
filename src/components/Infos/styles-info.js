@@ -19,6 +19,11 @@ export const Li = styled.li`
         max-width: 200px;
         height: 200px;
     }
+    
+    @media(max-width: 500px){
+      width: 370px;
+      height: auto;
+    }
 `;
 
 export const Div = styled.div`
@@ -65,6 +70,10 @@ export const DivSkills = styled.div`
   &::-webkit-scrollbar-thumb:hover {
     background: rgba(127, 67, 191, 1);
   }
+
+  @media(max-width: 500px){
+    width: 330px;
+  }
 `;
 
 export const Lista = styled.ul`
@@ -104,6 +113,13 @@ export const Move = styled.div`
 
   &::-webkit-scrollbar-thumb:hover {
     background: rgba(127, 67, 191, 1);
+  }
+
+  @media(max-width: 500px){
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 400px;
   }
 `;
 
