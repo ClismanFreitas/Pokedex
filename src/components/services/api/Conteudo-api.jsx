@@ -11,45 +11,55 @@ const Conteudo = () => {
     const [pokemonsListLimit, setPokemonsListLimit] = useState(10);
     const [selectedType, setSelectedType] = useState(null);
     const [typePokemonOffset, setTypePokemonOffset] = useState(10);
+    const [loading, setLoading] = useState(false)
 
     const buscarPokemonsPadrao = useCallback(async () => {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${pokemonsListLimit}`);
-        const pokemonsData = await Promise.all(
-            response.data.results.map(async (pokemon) => {
-                const details = await axios.get(pokemon.url);
-                const types = details.data.types.map((typeInfo) => typeInfo.type.name);
-                const nameSkills = details.data.abilities.map((abilityInfo) => abilityInfo.ability.name);
-                const descricaoSkills = details.data.abilities.map((skillInfo) => skillInfo.ability.url);
-                const skillsDetails = await Promise.all(
-                    descricaoSkills.map((url) => axios.get(url))
-                );
-                const skillsDescriptions = skillsDetails.map((res) => {
-                    const effect = res.data.effect_entries.find((e) => e.language.name === "en");
-                    return effect ? effect.short_effect : "Descrição não disponível";
-                });
-                const movimento = details.data.moves.map((moves) => (
-                    moves.move.name
-                ));
-                const numeroDeMovimentos = movimento.slice(0, 11);
-                return {
-                    name: pokemon.name,
-                    image: details.data.sprites.front_default,
-                    tipo: types,
-                    habilidades: nameSkills,
-                    infoHabilidades: skillsDescriptions,
-                    movimentos: numeroDeMovimentos
-                };
-            })
-        );
-        setIsPokemons(pokemonsData);
-        setSelectedType(null); 
-        setTypePokemonOffset(10);
+        setLoading(true);
+        try {
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${pokemonsListLimit}`);
+            const pokemonsData = await Promise.all(
+                response.data.results.map(async (pokemon) => {
+                    const details = await axios.get(pokemon.url);
+                    const types = details.data.types.map((typeInfo) => typeInfo.type.name);
+                    const nameSkills = details.data.abilities.map((abilityInfo) => abilityInfo.ability.name);
+                    const descricaoSkills = details.data.abilities.map((skillInfo) => skillInfo.ability.url);
+                    const skillsDetails = await Promise.all(
+                        descricaoSkills.map((url) => axios.get(url))
+                    );
+                    const skillsDescriptions = skillsDetails.map((res) => {
+                        const effect = res.data.effect_entries.find((e) => e.language.name === "en");
+                        return effect ? effect.short_effect : "Descrição não disponível";
+                    });
+                    const movimento = details.data.moves.map((moves) => (
+                        moves.move.name
+                    ));
+                    const numeroDeMovimentos = movimento.slice(0, 11);
+                    return {
+                        name: pokemon.name,
+                        image: details.data.sprites.front_default,
+                        tipo: types,
+                        habilidades: nameSkills,
+                        infoHabilidades: skillsDescriptions,
+                        movimentos: numeroDeMovimentos
+                    };
+                })
+            );
+            setIsPokemons(pokemonsData);
+            setSelectedType(null); 
+            setTypePokemonOffset(10);
+        } catch (error) {
+            console.error("Erro ao buscar pokémons padrão:", error);
+        } finally {
+            setLoading(false); 
+        }
     }, [pokemonsListLimit]);
 
     const buscarPokemonsPorTipo = useCallback(async (type) => {
+        setLoading(true);
+        try {
             const response = await axios.get(`https://pokeapi.co/api/v2/type/${type}`);
             const pokemonsUrl = response.data.pokemon.slice(typePokemonOffset, typePokemonOffset + 10).map((p) => p.pokemon.url);
-
+    
             if (pokemonsUrl.length > 0) {
                 const novosDetalhes = await Promise.all(
                     pokemonsUrl.map(async (url) => {
@@ -73,7 +83,11 @@ const Conteudo = () => {
                 setIsPokemons(prevPokemons => [...prevPokemons, ...novosDetalhes]);
                 setTypePokemonOffset(prevOffset => prevOffset + 10);
             }
-
+        } catch (error) {
+            console.error("Erro ao buscar pokémons por tipo:", error);
+        } finally {
+            setLoading(false); 
+        }
     }, [typePokemonOffset]);
 
     useEffect(() => {
@@ -111,6 +125,7 @@ const Conteudo = () => {
                 pokemons={isPokemons}
                 setPokemonsList={handleLoadMore}
                 theme={theme}
+                loading={loading}
             />
 
             <InfoPokemon
