@@ -26,6 +26,16 @@ export const Li = styled.li`
     }
 `;
 
+export const Img = styled.img`
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.2s;
+
+  &:hover{
+    box-shadow: 0px 0px 8px 2px white;
+  }
+`;
+
 export const Div = styled.div`
     height: 150px;
     padding-bottom: 20px;
@@ -37,7 +47,7 @@ export const Button = styled.button`
     cursor: pointer;
 
     img{
-        width: 70%;
+        width: 60%;
     }
 `;
 

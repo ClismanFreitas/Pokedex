@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { NomePokemon, Tipo, Main, } from "../Main/styles-main";
 import { ThemeContext } from "../../contexts/Theme-context";
 import React, { useContext } from "react";
-import { Li, Div, Button, DivSkills, Lista, ListaSkills, Move, Moves } from "./styles-info"
+import { Li, Div, Button, DivSkills, Lista, ListaSkills, Move, Moves, Img } from "./styles-info"
 import Home from "../../Assets/Image/casa.png"
 import { Link } from "react-router-dom"
 
@@ -19,7 +19,7 @@ const InfoPokemon = () => {
         <Main>
             <Button>
                 <Link to="/">
-                    <img src={Home} alt="" />
+                    <Img src={Home} alt="Voltar para a pagina" />
                 </Link>
             </Button>
             <ul>
