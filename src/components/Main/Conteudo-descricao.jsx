@@ -1,4 +1,4 @@
-import { Main, Ul, Li, NomePokemon, Tipo, Div, Button, StyledLink } from "./styles-main";
+import { Main, Ul, Li, NomePokemon, Tipo, Div, Button, StyledLink, Footer } from "./styles-main";
 
 const ConteudoDescricao = ({ pokemons, setPokemonsList, theme, loading }) => {
     const firstUpper = (string) => string.charAt(0).toUpperCase() + string.slice(1);
@@ -32,7 +32,15 @@ const ConteudoDescricao = ({ pokemons, setPokemonsList, theme, loading }) => {
                         <Button onClick={setPokemonsList} theme={theme}>
                             Carregar mais
                         </Button>
+                        <a href="#topo">
+                            <Button theme={theme}>
+                            Voltar ao topo
+                            </Button>
+                        </a>
                     </Div>
+                    <Footer theme={theme}> 
+                        <p>2025 Clisman Freitas</p>
+                    </Footer>
                 </>
             )}
         </Main>

@@ -7,7 +7,7 @@ export const Li = styled.li`
     text-align: center;
     align-items: center;
     width: 800px;
-    height: 650px;
+    height: auto;
     padding: 30px;
     margin: 12px;
     background-color: ${(props) => props.theme.fundo};
@@ -16,8 +16,8 @@ export const Li = styled.li`
     border-radius: 15px;
 
     img {
-        max-width: 200px;
-        height: 200px;
+        width: 130px;
+        height: auto;
     }
     
     @media(max-width: 500px){
@@ -27,12 +27,13 @@ export const Li = styled.li`
 `;
 
 export const Img = styled.img`
-  background-color: white;
+  background-color: ${(props) => props.theme.color};
   border-radius: 50%;
   transition: 0.2s;
 
   &:hover{
     box-shadow: 0px 0px 8px 2px white;
+    width: 45px;
   }
 `;
 
@@ -57,7 +58,7 @@ export const DivSkills = styled.div`
     background-color: ${(props) => props.theme.fundo};
     border: ${(props) => props.theme.borda};
     width: 400px;
-    height: 300px;
+    height: auto;
     border-radius: 15px;
     padding-top: 15px;
     margin-top: 15px;
@@ -88,13 +89,19 @@ export const DivSkills = styled.div`
 
 export const Lista = styled.ul`
     list-style: none;
-    padding-top: 10px;
+    padding: 10px;
     margin-bottom: 10px;
+    margin: 5px;
 `;
 
 export const ListaSkills = styled.li`
     margin: 5px;
+    display: flex;
+    flex-direction: column;
 
+    strong{
+      margin: 15px;
+    }
 `;
 
 
@@ -103,8 +110,11 @@ export const Move = styled.div`
     display: flex;
     border-radius: 15px;
     width: 700px;
-    padding: 15px;
+    padding-top: 15px;
+    margin-top: 10px;
     overflow-y: auto;
+    background-color: ${(props) => props.theme.fundo};
+    border: ${(props) => props.theme.borda};
 
     &::-webkit-scrollbar {
     width: 8px;
@@ -122,15 +132,21 @@ export const Move = styled.div`
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: rgba(127, 67, 191, 1);
+    background: ${(props) => props.theme.scroll};
   }
 
   @media(max-width: 500px){
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: 400px;
+    overflow-y: auto;
+    width: 300px;
+    height: 160px;
+    background-color: ${(props) => props.theme.fundo};
+    border: ${(props) => props.theme.borda};
+    margin: 10px;
   }
+
 `;
 
 export const Moves = styled.li`
@@ -141,5 +157,6 @@ export const Moves = styled.li`
     margin: 5px;
     border-radius: 15px;
     width: 140px;
-    
+    justify-content: center;
+ 
 `;

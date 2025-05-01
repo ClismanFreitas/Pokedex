@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { NomePokemon, Tipo, Main, } from "../Main/styles-main";
+import { NomePokemon, Tipo, Main, Footer } from "../Main/styles-main";
 import { ThemeContext } from "../../contexts/Theme-context";
 import React, { useContext } from "react";
 import { Li, Div, Button, DivSkills, Lista, ListaSkills, Move, Moves, Img } from "./styles-info"
@@ -11,7 +11,7 @@ const InfoPokemon = () => {
     const location = useLocation();
     const { pokemon } = location.state || {};
 
-    if (!pokemon) return ;
+    if (!pokemon) return;
 
     const firstUpper = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
@@ -19,7 +19,7 @@ const InfoPokemon = () => {
         <Main>
             <Button>
                 <Link to="/">
-                    <Img src={Home} alt="Voltar para a pagina" />
+                    <Img theme={theme} src={Home} alt="Voltar para a pagina" />
                 </Link>
             </Button>
             <ul>
@@ -36,11 +36,11 @@ const InfoPokemon = () => {
                         ))}
                     </Div>
                     <div>
-                        <h3>Move</h3>
+                        <h3>Movimentos</h3>
                         <ul>
-                            <Move>
+                            <Move theme={theme}>
                                 {pokemon.movimentos.map((move, index) => (
-                                <strong key={move + index}><Moves theme={theme}>{firstUpper(move)}</Moves></strong>
+                                    <strong key={move + index}><Moves theme={theme}>{firstUpper(move)}</Moves></strong>
                                 ))}
                             </Move>
                         </ul>
@@ -52,8 +52,6 @@ const InfoPokemon = () => {
                                 {pokemon.habilidades.map((skill, index) => (
                                     <ListaSkills key={index}>
                                         <strong>{firstUpper(skill)}</strong>
-                                        <br />
-                                        <br />
                                         <span>{pokemon.infoHabilidades[index]}</span>
                                     </ListaSkills>
                                 ))}
@@ -62,6 +60,9 @@ const InfoPokemon = () => {
                     </DivSkills>
                 </Li>
             </ul>
+            <Footer theme={theme}>
+                <p>2025 Clisman Freitas</p>
+            </Footer>
         </Main>
     );
 };

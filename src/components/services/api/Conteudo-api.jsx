@@ -33,14 +33,14 @@ const Conteudo = () => {
                     const movimento = details.data.moves.map((moves) => (
                         moves.move.name
                     ));
-                    const numeroDeMovimentos = movimento.slice(0, 11);
+                    
                     return {
                         name: pokemon.name,
                         image: details.data.sprites.front_default,
                         tipo: types,
                         habilidades: nameSkills,
                         infoHabilidades: skillsDescriptions,
-                        movimentos: numeroDeMovimentos
+                        movimentos: movimento
                     };
                 })
             );

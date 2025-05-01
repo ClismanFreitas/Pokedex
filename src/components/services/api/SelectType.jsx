@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { DivSelect, Select } from "../../Main/styles-main"
+import { DivSelect, Select, Option } from "../../Main/styles-main"
 
 const ListType = ({ theme, buscarPokemonsPadrao }) => {
     const firstUpper = (string) => string.charAt(0).toUpperCase() + string.slice(1);
@@ -24,11 +24,11 @@ const ListType = ({ theme, buscarPokemonsPadrao }) => {
         <>
             <DivSelect>
                 <Select theme={theme} onChange={tipoSelecionada}>
-                    <option value="All">All</option>
+                    <Option theme={theme} value="All">All</Option>
                     {isStype.map((type, index) => (
-                        <option key={index} value={type}>
+                        <Option theme={theme} key={index} value={type}>
                             {firstUpper(type)}
-                        </option>
+                        </Option>
                     ))}
                 </Select>
             </DivSelect>

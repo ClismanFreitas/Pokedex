@@ -10,15 +10,16 @@ export const themes ={
         Background: Light,
         icon: Sol,
         borda: '2px solid #DBAB47',
-        fundo: 'rgb(80 60 26 / 69%)'
+        fundo: 'rgb(80 60 26 / 69%)',
+        scroll: '#DBAB47'
     },
     dark: {
         color: '#6B6DCF',
         Background: Dark,
         icon: Lua,
         borda: '2px solid #B264E0',
-        fundo: 'rgba(55, 35, 68, 0.6)'
-        
+        fundo: 'rgba(55, 35, 68, 0.6)',
+        scroll: '#B264E0'
     }
 }
 

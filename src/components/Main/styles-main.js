@@ -34,29 +34,15 @@ font-family: sans-serif;
 `;
 
 export const Ul = styled.ul`
- width: 1400px;
-  height: 900px;
+  width: 1400px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px;
   list-style: none;
-  overflow-y: auto;
   border-radius: 15px;
   background-color: rgba(88, 83, 83, 0.18);
-
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: rgba(250, 250, 250, 0.7);
-    border-radius: 155px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: rgba(127, 67, 191, 1);
-  }
 
   @media (max-width: 500px){
     flex-direction: column;
@@ -64,6 +50,14 @@ export const Ul = styled.ul`
     height: auto;
     justify-content: center;
     align-items: center;
+  }
+
+  @media (max-width: 900px){
+    width: 700px;
+  }
+
+  @media (max-width: 1300px){
+    width: 1200px;
   }
 
 `;
@@ -112,6 +106,12 @@ export const Div = styled.div`
     justify-content: center;
     align-items: flex-end;
     margin: 25px;
+
+    @media (max-width: 500px){
+      flex-direction: column;
+      align-items: flex-end;
+      align-items: center;
+    }
 `;
 
 export const Button = styled.button`
@@ -122,11 +122,17 @@ export const Button = styled.button`
     color: white;
     border-radius: 15px;
     cursor: pointer;
+    margin: 0px 10px;
 
      &:hover {
-        transition: .1s ease
+        transition: .3s ease;
         box-shadow: 0px 0px 15px ${(props) => props.theme.borda}, 0px 0px 30px ${(props) => props.theme.color};
         transform: scale(1.05);
+    }
+
+    @media (max-width: 500px){
+      margin: 10px 0px;
+  
     }
 `;
 
@@ -152,7 +158,6 @@ export const Select = styled.select`
   appearance: none;
   font-weight: bold;
   cursor: pointer;
-
 `;
 
 export const DivSelect = styled.div`
@@ -165,4 +170,20 @@ export const DivSelect = styled.div`
     width: 100%;
     margin-top: 15px;   
 }
+`;
+
+export const Footer = styled.footer`
+  background-color:rgba(0, 0, 0, 0.83);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+  p{
+    color: ${(props) => props.theme.scroll};
+  }
+`;
+
+export const Option = styled.option`
+  background-color: ${(props) => props.theme.scroll};
 `;
