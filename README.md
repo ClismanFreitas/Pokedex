@@ -17,6 +17,7 @@
 <ul>
     <li><strong>Lista de Pokémon:</strong> Exibindo na tela inicial uma lista contendo 10 Pokémon com imagem, nome e tipo </li>
     <li><strong>Carregar mais:</strong> Botão com funcionalidade de carregar mais Pokémon dinamicamente.</li>
+    <li><strong>Pesquisa:</strong> Campo de busca para encontrar Pokémon especifico.</li>
     <li><strong>Voltar ao topo</strong> Botão com funcionalidade para redirecionar ao topo da página.</li>
     <li><strong>Filtragem por Tipo:</strong> Filtra Pokémon pelo tipo(ex: "ghost", "fire").</li>
     <li><strong>Tela de Informações:</strong> Exibe informações detalhadas do Pokémon selecionado, Nome, Tipo, movimento, habilidades juntamente com especificações.</li>
@@ -43,3 +44,38 @@
 <h1 align="center"> Decisões Adotadas</h1>
 
 <h3>1. Carregamento incremental</h3>
+<ol>
+    <li>Pokémon sao carregados em lotes de (10 por vez) e exibidos na página</li>
+    <li>Justificativa: Carregar apenas o necessario e melhorar na economia de cados em conexões lentas.</li>
+</ol>
+
+<h3>2. Design Responsivo</h3>
+<ol>
+    <li>Uso de media queries e grid layout para adaptar a interface.</li>
+    <li>Justificativa: Garante usabilidade em dispositivos variados, como smartphones e desktops.</li>
+</ol>
+
+<h3>3. Temas Claro/Escuro:</h3>
+<ol>
+    <li>Implementação com ThemeProvider e styled-components.</li>
+    <li>Justificativa: Melhora a acessibilidade e preferência do usuário</li>
+</ol>
+
+---
+
+<h1 align="center">Passo a Passo para Rodar o Projeto</h1>
+
+<h3>Pré-requisitos</h3>
+<ul>
+    <li><strong>Node.js:</strong> Versao 18 ou superior.</li>
+    <li><strong>NPM:</strong> Incluído com o Node.js (ou use yarn, se  preferir).</li>
+    <li><strong>Git:</strong> Para clonar o repositório.</li>
+</ul>
+
+<h3>Clone o Repositório</h3>
+
+```bash
+git clone https://github.com/ClismanFreitas/Pokedex.git
+cd Pokedex
+
+

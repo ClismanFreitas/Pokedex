@@ -5,7 +5,7 @@ const Cabecalho = () => {
     return (
         <Header id="topo">
             <Div>
-                <Img src={Logo} />
+                <Img src={Logo} alt="logo pokemon" />
             </Div>
         </Header>
     )
