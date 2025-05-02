@@ -125,6 +125,7 @@ const Conteudo = () => {
             <BuscarPorNome 
                 setPokemons={setIsPokemons}
                 theme={theme}
+                buscarPokemonsPadrao={buscarPokemonsPadrao}
             />
 
             <ConteudoDescricao

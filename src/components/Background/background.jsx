@@ -27,9 +27,11 @@ const Container = styled.div`
 
     @media (max-width: 500px){
         background-position: center;
+        background-size: cover;
     }
 
     @media (max-width: 900px){
         background-position: center;
+        background-size: cover;
     }
 `;
