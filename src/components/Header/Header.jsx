@@ -22,6 +22,14 @@ const Cabecalho = () => {
 
     const Img = styled.img`
         width: 30%;
+
+        @media(max-width: 900px){
+            width: 40%;
+        }
+
+        @media(max-width: 500px){
+            width: 60%;
+        }
     `;
 
 

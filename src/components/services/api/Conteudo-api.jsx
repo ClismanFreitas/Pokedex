@@ -4,6 +4,7 @@ import { ThemeContext } from "../../../contexts/Theme-context";
 import ConteudoDescricao from "../../Main/Conteudo-descricao";
 import InfoPokemon from "../../Infos/informacoes";
 import ListType from "./SelectType";
+import { BuscarPorNome } from "./buscarNome";
 
 const Conteudo = () => {
     const [isPokemons, setIsPokemons] = useState([]);
@@ -119,6 +120,11 @@ const Conteudo = () => {
                 setPokemonsList={setPokemonsListLimit}
                 theme={theme}
                 buscarPokemonsPadrao={handleTypeChange} 
+            />
+
+            <BuscarPorNome 
+                setPokemons={setIsPokemons}
+                theme={theme}
             />
 
             <ConteudoDescricao

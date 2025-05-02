@@ -51,13 +51,17 @@ export const Ul = styled.ul`
     justify-content: center;
     align-items: center;
   }
+  
+  @media (max-width: 1300px){
+    width: 1200px;
+  }
+  
+  @media (max-width: 1100px){
+    width: 900px;
+  }
 
   @media (max-width: 900px){
     width: 700px;
-  }
-
-  @media (max-width: 1300px){
-    width: 1200px;
   }
 
 `;
@@ -165,11 +169,15 @@ export const DivSelect = styled.div`
   display: flex;
   flex-direction: row-reverse;
 
-    @media (max-width: 500px){
+  @media (max-width: 900px){
+    width: 95%;
+}
+  @media (max-width: 500px){
     justify-content: center;
     width: 100%;
     margin-top: 15px;   
-}
+  }
+
 `;
 
 export const Footer = styled.footer`
@@ -186,4 +194,48 @@ export const Footer = styled.footer`
 
 export const Option = styled.option`
   background-color: ${(props) => props.theme.scroll};
+`;
+
+export const Input = styled.input`
+  padding: 8px 30px;
+  border-radius: 10px;
+`;
+
+export const DivInput = styled.div`
+  width: 26%;
+  display: flex;
+  margin-left: 250px;
+
+  @media (max-width: 1300px){
+    margin-left: 40px;
+  }
+
+  @media (max-width: 900px) {
+    width: 30%;
+    margin-left: 20px;
+  }
+  @media (max-width: 500px){
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px; 
+    margin-left: 0px;  
+  }
+`
+
+export const ButtonInput = styled.button`
+    background-color: ${(props) => props.theme.fundo};
+    border: ${(props) => props.theme.borda};
+    color: white;
+    transition: 0.5s ease-in-out;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0px 15px;
+
+     &:hover {
+        transition: .3s ease;
+        box-shadow: 0px 0px 15px ${(props) => props.theme.borda}, 0px 0px 30px ${(props) => props.theme.color};
+        transform: scale(1.05);
+    }
+
 `;
