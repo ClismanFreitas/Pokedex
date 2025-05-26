@@ -8,7 +8,7 @@
 ---
 
 <h1 align="center"> Propósito da Aplicação</h1> 
-<p>O <strong>O Projeto Pokédex React</strong> é uma aplicação web desenvolvida para navegar e exibir informações detalhadas sobre Pokémon, Fazendo a utilização da API pública PokeAPI. Onde o usuário tem total acesso a uma lista de Pokémon, pesquisar por o tipo, visualizar informações detalhadas do mesmo.</p>
+<p>O <strong>O Projeto Pokédex React</strong> é uma aplicação web desenvolvida para navegar e exibir informações detalhadas sobre Pokémon, Fazendo a utilização da API pública PokeAPI. Onde o usuário tem total acesso a uma lista de Pokémon, pesquisar por o tipo, nome, visualizar informações detalhadas do mesmo.</p>
 
 ---
 
